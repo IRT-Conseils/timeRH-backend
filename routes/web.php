@@ -21,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Login page
-Route::get('/', function () {
-    return '<h1>Login page</h1>';
-})->name('home.index');
+// Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::prefix('/rh')->name('rh.')->group(function () {
     // Dashboard
@@ -50,3 +48,7 @@ Route::prefix('/rh')->name('rh.')->group(function () {
 
 
 
+
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
