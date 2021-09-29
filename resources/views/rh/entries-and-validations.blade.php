@@ -1,7 +1,171 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('title', 'Saisies et validations')
 
 @section('content')
-    <h1>Saisies et validations</h1>
+    <div class="content-header justify-content-between">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="homepage.html">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Saisies et validations</li>
+                </ol>
+            </nav>
+            <h4 class="content-title content-title-xs mb-3">Saisies et validations</h4>
+        </div>
+
+        <div class="d-none d-sm-flex">
+            <a href="" class="btn btn-light"><i data-feather="print" class="svg-14"></i> Imprimer</a>
+            <a href="#" class="btn btn-light"><i data-feather="print" class="svg-14"></i> Délégation</a>
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Saisie
+                </button>
+                <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                    <a class="dropdown-item" href="#">Note de frais</a>
+                    <a class="dropdown-item" href="#">Absences</a>
+                    <a class="dropdown-item" href="#">Congés</a>
+                    <a class="dropdown-item" href="#">Variables</a>
+                    <a class="dropdown-item" href="#">Entrées / Sorties</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Import / Export
+                </button>
+                <div class="dropdown-menu tx-14" aria-labelledby="dropleftMenuButton2" x-placement="left-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-2px, 0px, 0px);">
+                    <a class="dropdown-item" href="form-export-exepense-note.html">Import note de frais</a>
+                    <a class="dropdown-item" href="form-export-exepense-note.html">Export note de frais</a>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- content-header -->
+    <div class="content-body">
+
+        <table class="table mb-5">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Statut</th>
+                <th scope="col">Date de demande</th>
+                <th scope="col">Libellé</th>
+                <th scope="col">Montant</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="#">Accepter</a>
+                            <a class="dropdown-item" href="#">Refuser</a>
+                            <a class="dropdown-item" href="#">Demande information complémentaire</a>
+                            <a class="dropdown-item" href="#">Modifier</a>
+                        </div>
+                    </div>
+                </th>
+                <td>Accepté</td>
+                <td>13/07/21</td>
+                <td>Repas</td>
+                <td>36,000</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="#">Accepter</a>
+                            <a class="dropdown-item" href="#">Refuser</a>
+                            <a class="dropdown-item" href="#">Demande information complémentaire</a>
+                            <a class="dropdown-item" href="#">Modifier</a>
+                        </div>
+                    </div>
+                </th>
+                <td>refusé</td>
+                <td>15/08/21</td>
+                <td>Parking</td>
+                <td>15,000</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="#">Accepter</a>
+                            <a class="dropdown-item" href="#">Refuser</a>
+                            <a class="dropdown-item" href="#">Demande information complémentaire</a>
+                            <a class="dropdown-item" href="#">Modifier</a>
+                        </div>
+                    </div>
+                </th>
+                <td>Accepté</td>
+                <td>12/08/21</td>
+                <td>Primes</td>
+                <td>200,000</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Nature</th>
+                <th scope="col">Date de début</th>
+                <th scope="col">Date de fin</th>
+                <th scope="col">Durée</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="#">Accepter</a>
+                            <a class="dropdown-item" href="#">Refuser</a>
+                            <a class="dropdown-item" href="#">Demande information complémentaire</a>
+                            <a class="dropdown-item" href="#">Modifier</a>
+                        </div>
+                    </div>
+                </th>
+                <td>Congés</td>
+                <td>13/07/21</td>
+                <td>20/07/21</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="#">Accepter</a>
+                            <a class="dropdown-item" href="#">Refuser</a>
+                            <a class="dropdown-item" href="#">Demande information complémentaire</a>
+                            <a class="dropdown-item" href="#">Modifier</a>
+                        </div>
+                    </div>
+                </th>
+                <td>Maladie</td>
+                <td>15/07/21</td>
+                <td>16/07/21</td>
+                <td>2</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div><!-- content-body -->
 @endsection
