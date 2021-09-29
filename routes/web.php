@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EDocumentController;
 use App\Http\Controllers\EntriesAndValidationsController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MedicalCheckUpController;
 use App\Http\Controllers\MyCollaboratorsController;
 use App\Http\Controllers\MyRequestsController;
@@ -24,31 +25,36 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::prefix('/rh')->name('rh.')->group(function () {
+
+    // Homepage
+    Route::get('/homepage', [DashboardController::class, 'homepage'])->name('homepage');
+
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-// My requests
+    // My requests
     Route::get('/my-requests', [MyRequestsController::class, 'myRequests'])->name('my-requests');
 
-// My collaborators
+    // My collaborators
     Route::get('/my-collaborators', [MyCollaboratorsController::class, 'myCollaborators'])->name('my-collaborators');
 
-// Entries and validations
+    // Entries and validations
     Route::get('/entries-and-validations', [EntriesAndValidationsController::class, 'entriesAndValidations'])->name('entries-and-validations');
 
-// Temporary workers
+    // Temporary workers
     Route::get('/temporary-workers', [TemporaryWorkersController::class, 'temporaryWorkers'])->name('temporary-workers');
 
-// Medical check-up
+    // Medical check-up
     Route::get('/medical-check-up', [MedicalCheckUpController::class, 'medicalCheckUp'])->name('medical-check-up');
 
-// E-document
+    // E-document
     Route::get('/e-document', [EDocumentController::class, 'eDocument'])->name('e-document');
 });
 
-
+// Index
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
